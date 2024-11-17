@@ -1,0 +1,10 @@
+#!/bin/bash
+# results=$(aws ec2 describe-instances --filters "Name=tag:Name,Values=*$1*" --query 'Reservations[*].Instances[*].[Tags[?Key==`Name`].Value | [0], PrivateIpAddress]' | jq -r '(.[] []) | @tsv')
+
+# results=$(aws ec2 describe-instances --filters "Name=tag:Name,Values=*$1*" --query 'Reservations[*].Instances[*].[Tags[?Key==`Name`].Value | [0], PrivateIpAddress]' | jq -r '(.[] []) | @tsv' |rofi -dmenu -p "SSH: ")
+results=$(aws ec2 describe-instances --filters "Name=tag:Name,Values=*$1*" --query 'Reservations[*].Instances[*].[Tags[?Key==`Name`].Value | [0], PrivateIpAddress]' | jq -r '(.[] []) | @tsv' | fzf)
+
+selected=$(echo $results | awk '{print $NF}')
+
+echo "SSHing to $results using"
+ssh $selected

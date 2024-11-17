@@ -1,0 +1,12 @@
+{
+  "layer": "bottom",
+  "position": "bottom",
+  "height": 24,
+  "spacing": 5,
+  "modules-left": ["sway/workspaces","sway/mode"],
+  "modules-center": ["sway/window"],
+  "modules-right": ["cpu","memory","battery","pulseaudio","clock","tray"],
+  "clock": {
+    "format": "{: %I:%M %p   %m/%d/%Y}"
+  },
+}

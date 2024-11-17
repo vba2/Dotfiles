@@ -1,5 +1,25 @@
 # Dotfiles
-These are my Gnome-i3-Gaps Dotfiles
-  Terminal rxvt-Unicode
-  WM-i3 gaps with Gnome Damen
-![header image](https://github.com/vba2/Dotfiles/blob/master/Screenshot%20from%202019-06-05%2019-59-12.png?raw=true)
+This repo contains my dotfiles for using Sway (i3 on Wayland)
+-----
+
+### Deps
+Use the `deps.sh` script to install all packages configured by this repo on debian based systems.
+
+
+### Stow
+This repo uses `stow` to mange the dot files
+
+Install a config
+
+- This will place the config in correct location for you.
+
+```
+stow sway 
+```
+
+Remove a config
+```
+stow -D sway
+```
+
+![header image](https://github.com/jstrebeck/Dotfiles/blob/migrate-to-sway/image.png)
