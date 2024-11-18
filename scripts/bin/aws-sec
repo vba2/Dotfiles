@@ -1,0 +1,12 @@
+#!/bin/bash
+if [[ -v ENV  ]]; then
+    ENV=$(echo "$ENV" | tr '[:upper:]' '[:lower:]')
+else
+    ENV="devqa"
+fi
+
+SERVICE=$(echo "$1" | tr '-' '_')
+SECRET="${ENV}_${SERVICE}_secret_store"
+echo $SECRET
+
+aws secretsmanager get-secret-value --region=us-west-2 --secret-id=$SECRET | jq '.SecretString|fromjson'
