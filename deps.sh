@@ -3,7 +3,7 @@
 echo "Installing deps for Dotfiles"
 
 #Verify install tools
-install_deps=(brew pip)
+install_deps=(brew)
 
 for dep in ${install_deps[@]}
 do
@@ -15,13 +15,13 @@ do
 done
 
 #Add PPAs
-sudo add-apt-repository ppa:neovim-ppa/unstable
+sudo add-apt-repository ppa:neovim-ppa/unstable -y
 sudo add-apt-repository ppa:aslatter/ppa -y
 
-sudo apt update && sudo apt upgrade -y
+sudo apt update
 
 #Install apt
-apt_deps=(stow zsh gnustep-gui-runtime ripgrep neovim copyq sway swaylock waybar rofi alacritty build-essential curl gnupg software-properties-common ca-certificates gnome-tweaks wl-clipboard btop brightnessctl)
+apt_deps=(stow zsh gnustep-gui-runtime ripgrep neovim copyq sway swaylock waybar rofi alacritty build-essential curl gnupg software-properties-common ca-certificates gnome-tweaks wl-clipboard btop brightnessctl python3-mako)
 
 for dep in ${apt_deps[@]}
 do
@@ -45,21 +45,8 @@ do
   fi
 done
 
-#Install pip
-pip_deps=(mako)
-
-for dep in ${pip_deps[@]}
-do
-  sudo pip install $dep -y
-  if [ $? -ne 0 ]; then
-      echo "Could not install $dep"
-      break
-  fi
-done
-
 #Oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
 
 #Default tools in zsh theme
 ## Terraform
