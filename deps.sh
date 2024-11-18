@@ -104,6 +104,9 @@ curl https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/JetBrainsM
 fc-cache -f -v
 cd -
 
+#Neovim
+git clone git@github.com:jstrebeck/neovim-config.git ~/.config/nvim
+
 #GTK
 ##GTK Theme
 

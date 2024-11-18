@@ -1,10 +1,11 @@
 # Dotfiles
 This repo contains my dotfiles for using Sway (i3 on Wayland)
------
 
-### Deps
+## Deps
 Use the `deps.sh` script to install all packages configured by this repo on debian based systems.
-
+#### Neovim
+This script will clone the following repo to the Neovim config location. The Neovim config is managed by this enirely seperate repo.
+https://github.com/jstrebeck/neovim-config
 
 ### Stow
 This repo uses `stow` to mange the dot files
