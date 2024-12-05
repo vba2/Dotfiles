@@ -21,7 +21,7 @@ sudo add-apt-repository ppa:aslatter/ppa -y
 sudo apt update
 
 #Install apt
-apt_deps=(stow zsh gnustep-gui-runtime ripgrep neovim copyq sway swaylock waybar rofi alacritty build-essential curl gnupg software-properties-common ca-certificates gnome-tweaks wl-clipboard btop brightnessctl python3-mako)
+apt_deps=(stow zsh gnustep-gui-runtime ripgrep neovim copyq sway swaylock waybar rofi alacritty build-essential curl gnupg software-properties-common ca-certificates gnome-tweaks wl-clipboard btop brightnessctl python3-mako nodejs npm)
 
 for dep in ${apt_deps[@]}
 do
