@@ -247,3 +247,5 @@ export NVM_DIR="$HOME/.config/nvm"
 
 #Battery
 alias batt='upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep -E "state|to\ full|percentage|to \empty"'
+
+export PATH="$PATH:$(go env GOPATH)/bin"

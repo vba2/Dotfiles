@@ -98,7 +98,6 @@ git clone git@github.com:jstrebeck/neovim-config.git ~/.config/nvim
 ##GTK Theme
 
 ##GTK app fix
-sudo apt uninstall xdg-desktop-portal-gnome
-sudo apt reinstall xdg-desktop-portal-gtk
+sudo apt remove xdg-desktop-portal-gtk
 
 echo "All deps have been installed"
